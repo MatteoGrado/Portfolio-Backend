@@ -1,0 +1,18 @@
+services:
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: portfolio
+      MYSQL_USER: DB_Admin
+      MYSQL_PASSWORD: "Sumafelo!"
+      MYSQL_ROOT_PASSWORD: Sumafelo031!
+    ports:
+      - "3309:3306"
+
+  rabbitmq:
+    image: rabbitmq:latest
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    ports:
+      - "5672:5672"

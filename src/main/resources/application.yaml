@@ -1,0 +1,39 @@
+spring:
+  config:
+    import: optional:file:./env.properties
+
+  application:
+    name: Portfolio-Backend
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: ${RABBITMQ_VHOST}
+
+sentry:
+  dsn: ${SENTRY_DSN}
+  environment: ${SENTRY_ENVIRONMENT}
+  traces-sample-rate: ${SENTRY_TRACES_SAMPLE_RATE}
+  send-default-pii: false
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
