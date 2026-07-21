@@ -12,13 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 @RequiredArgsConstructor
 @Slf4j
-public class ContactController
-{
+public class ContactController {
     private final ContactService contactService;
 
     @PostMapping("/contact")
-    public void contact(ContactDto contactDto)
-    {
+    public void contact(ContactDto contactDto) {
         log.info("{}", contactDto);
         contactService.createContact(contactDto);
     }
